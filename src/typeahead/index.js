@@ -280,7 +280,10 @@ var Typeahead = React.createClass({
       return this.props.onKeyDown(event);
     }
     // Don't propagate the keystroke back to the DOM/browser
-    event.preventDefault();
+
+    if (event.keyCode !== KeyEvent.DOM_VK_TAB) {
+      event.preventDefault();
+    }
   },
 
   componentWillReceiveProps: function(nextProps) {
