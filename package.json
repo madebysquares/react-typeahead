@@ -61,7 +61,8 @@
     "build": "browserify ./src/react-typeahead.js -t reactify -t literalify -x react -s ReactTypeahead -o ./dist/react-typeahead.js",
     "watchify": "watchify ./src/react-typeahead.js -t reactify -t literalify -x react -s ReactTypeahead -o ./dist/react-typeahead.js",
     "lib": "gulp build",
-    "prepublish": "npm run lib"
+    "prepublish": "npm run lib",
+    "postinstall": "npm run build"
   },
   "literalify": {
     "react": "window.React || require('react')"
